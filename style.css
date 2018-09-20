@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.orange {
+    color: #f26202;
+}
+
+body {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+/*header*/
+header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    background-image: url(zebatka.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10%;
+    background-attachment: fixed;
+}
+
+header div {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
+header div img {
+    margin: 0 23%;
+}
+
+h1 {
+    padding: 40px 40px 10px 40px;
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header div h1 {
+    margin: 0 auto;
+    font-size: 3rem;
+}
+
+/*sekcja rowerowa*/
+section {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+}
+
+section p {
+    padding: 0 50px;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+}
+
+h2 {
+    padding: 20px 0 40px 0;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bicycle {
+    padding: 10px;
+    float: left;
+    width: 33.3%;
+}
+
+/*sekcja warsztatu*/
+section.warsztat {
+    position: relative;
+    height: 100vh;
+    background-image: url(img/warsztat.png);
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-size: contain;
+    background-position: right;
+    background-attachment: fixed;
+}
+
+section.warsztat h2 {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 25%;
+}
+
+/*sekcja o nas*/
+section.we {
+    height: 100%;
+}
+
+section div.photo {
+    padding: 0 0 40px 0;
+    float: left;
+    width: 33.3%;
+    transform: scale(1);
+    transition: 1s;
+}
+
+div.photo.off {
+    transform: scale(0);
+}
+
+section div.photo img {
+    padding: 80px 80px 40px 80px;
+    width: 100%;
+}
+
+section.we h2 {
+    padding: 50px;
+}
+
+section.we p {
+    font-size: 1.5rem;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/*sekcja części rowerowych*/
+.parts {
+    padding: 30px;
+    height: 100vh;
+}
+
+.columns {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.columns.brands {
+    background-size: 34%;
+}
+
+.opacity {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.part {
+    width: 100%;
+    height: 25%;
+}
+
+section.parts h2 {
+    padding: 40vh 0;
+    text-align: center;
+}
+
+section.parts h2 span {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+/*sekcja głowy*/
+.head {
+    height: 100vh;
+    background-image: url(img/head.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section.head h1 {
+    padding: 30px 0;
+    font-size: 4rem;
+    background-color: rgb(0, 0, 0);
+    line-height: 6rem;
+}
+
+/*sekcja kontaktu*/
+.contact {
+    height: 100vh;
+}
+
+div.item {
+    padding: 40px 0;
+    width: 50%;
+    float: left;
+}
+
+img.map {
+    padding: 0 0 15% 0;
+    margin: 0 auto;
+    display: block;
+}
+
+div p.info {
+    text-align: center;
+}
+
+div.adress p {
+    padding: 18px 0 20px 35%;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+div.adress p i {
+    padding: 0 20px 0 0;
+    font-size: 1.8rem;
+    color: #f26202;
+}
+
+/*stopka*/
+section.footer h2 {
+    padding: 20px;
+    font-size: 1rem;
+    background-color: #111;
+    letter-spacing: 3px;
+}
