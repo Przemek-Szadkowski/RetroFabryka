@@ -24,17 +24,94 @@ header {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url(/img/zebatka_1024.png);
+    background-image: url(../img/zebatka_1024.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 8%;
     background-attachment: fixed;
 }
 
-header div {
+header div.main_content {
     position: absolute;
     top: 40%;
     right: 5%;
+}
+
+header div i {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 1;
+    font-size: 3rem;
+    color: #f26202;
+    cursor: pointer;
+}
+
+header div i.fa-times {
+    color: black;
+    z-index: 2;
+    transition: .5s;
+}
+
+header div i.fa-times:hover {
+    color: rgba(255, 255, 255, .6);
+}
+
+header div i.off {
+    display: none;
+}
+
+nav {
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    right: 40px;
+    background-color: rgba(242, 98, 2, .8);
+    height: 260px;
+    width: 150px;
+    transform: scale(1);
+    transform-origin: 80% 5%;
+    transition: .5s;
+}
+
+nav.off {
+    transform: scale(0);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 260px;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    width: 130px;
+    height: 50px;
+    background-color: rgba(242, 98, 2, .8);
+    border: 2px solid black;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    font-weight: normal;
+    transition: .5s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, .6);
+    color: rgb(0, 0, 0);
+    border-color: black;
 }
 
 header div img {
@@ -61,25 +138,47 @@ header div h1 {
 section.bikes {
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
 div.slogan {
-    flex-basis: 20vh;
+    -ms-flex-preferred-size: 20%;
+    flex-basis: 20%;
 }
 
 div.bicycles {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -ms-flex-line-pack: distribute;
     align-content: space-around;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-preferred-size: 80%;
+    flex-basis: 80%;
 }
 
 .bicycle {
-    flex-basis: 32%;
+    display: block;
+    max-height: 45vh;
+    max-width: 32vw;
     padding: 5px 0;
+    transform: scale(1);
+    transition: .3s;
+}
+
+.bicycle:hover {
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
 h2 {
@@ -103,7 +202,7 @@ div.slogan p {
 section.workshop {
     position: relative;
     height: 100vh;
-    background-image: url(/img/warsztat.png);
+    background-image: url(../img/warsztat.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
@@ -115,6 +214,7 @@ section.workshop h2 {
     top: 10%;
     left: 5%;
     width: 30%;
+    height: 20vh;
 }
 
 section.workshop p {
@@ -122,6 +222,7 @@ section.workshop p {
     top: 35%;
     left: 5%;
     width: 30%;
+    max-height: 80vh;
     text-align: center;
     font-size: 1.4rem;
     background-color: rgba(255, 255, 255, .2);
@@ -133,22 +234,40 @@ section.workshop p {
 
 section.parts {
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
     justify-content: stretch;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
 div.column_left {
+    -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 div.column_right {
+    -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -172,29 +291,60 @@ div.column_right p {
     width: 100%;
     height: 25%;
     margin: 5px;
+    transform: translateX(-700px);
+    transition: 1.2s;
+}
+
+.part.second {
+    transition-delay: .3s;
+}
+
+.part.third {
+    transition-delay: .6s;
+}
+
+.part.fourth {
+    transition-delay: .9s;
+}
+
+.part.active {
+    transform: translateX(0);
 }
 
 /*sekcja o nas*/
 section.we {
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 100px;
 }
 
 div.portraites {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 
 section div.photo {
     width: 30%;
+    -webkit-transform: scale(1);
     transform: scale(1);
+    -webkit-transition: 1s;
     transition: 1s;
 }
 
 div.photo.off {
+    -webkit-transform: scale(0);
     transform: scale(0);
 }
 
@@ -224,7 +374,7 @@ section.we p.aboutus {
 /*sekcja głowy*/
 .banner {
     height: 100vh;
-    background-image: url(/img/head_1024.jpg);
+    background-image: url(../img/head_1024.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -233,17 +383,24 @@ section.we p.aboutus {
 section.banner h1 {
     padding: 20px 0;
     font-size: 4rem;
-    background-color: rgb(0, 0, 0);
+    background-color: #f26202;
     line-height: 6rem;
-    color: #f26202;
+    color: #000;
+    font-weight: bold;
     border-top: 3px solid rgba(255, 255, 255, .3);
 }
 
 /*sekcja kontaktu*/
 .contact {
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 
@@ -264,7 +421,11 @@ section.contact div.top h2 {
 }
 
 div.main_contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 85;
 }
@@ -273,9 +434,18 @@ div.item {
     position: relative;
     padding: 20px 0;
     width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -289,6 +459,7 @@ img.map {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: block;
     width: 65%;
