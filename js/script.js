@@ -1,7 +1,16 @@
+// variables
+
 const bars = document.querySelector(".fa-bars");
 const close = document.querySelector(".fa-times");
 const menu = document.querySelector("nav");
 const menuButtons = document.querySelectorAll("li a");
+const regButton = document.getElementById("reg");
+const modal = document.querySelector(".modal");
+const closeButton = document.getElementById("close");
+const modalWrapper = document.querySelector(".modal_wrapper");
+const startButton = document.getElementById("start");
+
+// function
 
 function showPhotos() {
     const scrollPosition = window.scrollY;
@@ -35,6 +44,8 @@ function movePhotos() {
     })
 }
 
+// events
+
 bars.addEventListener("click", function () {
     bars.classList.add("off");
     close.classList.remove("off");
@@ -52,6 +63,39 @@ menuButtons.forEach(function (menuButton) {
         bars.classList.remove("off");
         menu.classList.add("off");
     })
+})
+
+// modal
+
+regButton.addEventListener("click", function () {
+    modal.classList.remove("off");
+    closeButton.classList.add("on");
+    modalWrapper.classList.add("active");
+    close.classList.add("off");
+    bars.classList.remove("off");
+    menu.classList.add("off");
+})
+
+closeButton.addEventListener("click", function () {
+    modal.classList.add("off");
+    closeButton.classList.remove("on");
+    modalWrapper.classList.remove("active");
+})
+
+// przycisk start
+
+startButton.addEventListener("click", function () {
+    close.classList.add("off");
+    bars.classList.remove("off");
+    menu.classList.add("off");
+})
+
+// przewijanie - przycisk start
+
+$("#start").on("click", function () {
+    $("body, html").animate({
+        scrollTop: $("#up").offset().top,
+    }, 1000)
 })
 
 window.addEventListener("scroll", showPhotos);
