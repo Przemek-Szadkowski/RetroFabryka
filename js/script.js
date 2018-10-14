@@ -98,5 +98,11 @@ $("#start").on("click", function () {
     }, 1000)
 })
 
+$(".fa-angle-double-up").on("click", function () {
+    $("body, html").animate({
+        scrollTop: $("#main_title").offset().top,
+    }, 1000)
+})
+
 window.addEventListener("scroll", showPhotos);
 window.addEventListener("scroll", movePhotos);
