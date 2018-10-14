@@ -6,3 +6,4 @@ My first repository. Website of Retrofabryka, my friend's company.
 + HTML
 + CSS3
 + Javascript
++ Lighbox library
