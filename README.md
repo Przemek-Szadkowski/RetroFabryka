@@ -1,5 +1,5 @@
 # Retrofabryka
-My first repository - website RetroFabryka
+My first repository - website of RetroFabryka
 # General info
 My first repository. Website of Retrofabryka, my friend's company.
 # Technologies
