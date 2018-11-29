@@ -1,5 +1,3 @@
-// variables
-
 const bars = document.querySelector(".fa-bars");
 const close = document.querySelector(".fa-times");
 const menu = document.querySelector("nav");
@@ -10,41 +8,7 @@ const closeButton = document.getElementById("close");
 const modalWrapper = document.querySelector(".modal_wrapper");
 const startButton = document.getElementById("start");
 
-// function
-
-function showPhotos() {
-    const scrollPosition = window.scrollY;
-    const photoHeight = document.querySelector(".photo").clientHeight;
-    const photoPosition = document.querySelector(".photo").offsetTop;
-    const items = document.querySelectorAll(".photo");
-
-    items.forEach(function (item) {
-        if (scrollPosition > photoPosition - photoHeight) {
-            item.classList.remove("off");
-        }
-        if ((scrollPosition + 200) < photoPosition - photoHeight) {
-            item.classList.add("off");
-        }
-    })
-}
-
-function movePhotos() {
-    const scrollPosition = window.scrollY;
-    const partsHeight = document.querySelector(".part").clientHeight;
-    const partsPosition = document.querySelector(".part").offsetTop;
-    const items = document.querySelectorAll(".part");
-
-    items.forEach(function (item) {
-        if (scrollPosition + 200 > partsPosition - partsHeight) {
-            item.classList.add("active");
-        }
-        if (scrollPosition + 600 < partsPosition - partsHeight) {
-            item.classList.remove("active");
-        }
-    })
-}
-
-// events
+// events - buttons
 
 bars.addEventListener("click", function () {
     bars.classList.add("off");
@@ -82,7 +46,7 @@ closeButton.addEventListener("click", function () {
     modalWrapper.classList.remove("active");
 })
 
-// przycisk start
+// start button
 
 startButton.addEventListener("click", function () {
     close.classList.add("off");
@@ -90,11 +54,11 @@ startButton.addEventListener("click", function () {
     menu.classList.add("off");
 })
 
-// przewijanie - przycisk start
+// scrolling
 
 $("#start").on("click", function () {
     $("body, html").animate({
-        scrollTop: $("#up").offset().top,
+        scrollTop: $("#top").offset().top,
     }, 1000)
 })
 
@@ -103,6 +67,40 @@ $(".fa-angle-double-up").on("click", function () {
         scrollTop: $("#main_title").offset().top,
     }, 1000)
 })
+
+// functions
+
+function showPhotos() {
+    const scrollPosition = window.scrollY;
+    const photoHeight = document.querySelector(".photo").clientHeight;
+    const photoPosition = document.querySelector(".photo").offsetTop;
+    const items = document.querySelectorAll(".photo");
+
+    items.forEach(function (item) {
+        if (scrollPosition + 100 > photoPosition - photoHeight) {
+            item.classList.remove("off");
+        }
+        if ((scrollPosition + 200) < photoPosition - photoHeight) {
+            item.classList.add("off");
+        }
+    })
+}
+
+function movePhotos() {
+    const scrollPosition = window.scrollY;
+    const partsHeight = document.querySelector(".part").clientHeight;
+    const partsPosition = document.querySelector(".part").offsetTop;
+    const items = document.querySelectorAll(".part");
+
+    items.forEach(function (item) {
+        if (scrollPosition + 200 > partsPosition - partsHeight) {
+            item.classList.add("active");
+        }
+        if (scrollPosition + 600 < partsPosition - partsHeight) {
+            item.classList.remove("active");
+        }
+    })
+}
 
 window.addEventListener("scroll", showPhotos);
 window.addEventListener("scroll", movePhotos);

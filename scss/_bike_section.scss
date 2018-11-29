@@ -1,0 +1,195 @@
+//sekcja rowerowa
+
+section.bikes {
+    height: 240vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    div.slogan {
+        flex-basis: 100vh;
+
+        h1 {
+            color: white;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 20px;
+        }
+
+        h2 {
+            padding: 20px 10px 20px 10px;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, .2);
+            border-radius: 25px;
+            margin: 0 20px 0 20px;
+            padding: 10px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+    }
+
+    div.bicycles {
+        flex-basis: 140vh;
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-wrap: wrap;
+
+        p {
+            font-size: .8rem;
+        }
+
+        .bicycle {
+            display: block;
+            max-height: 45vh;
+            max-width: 45vw;
+            padding: 5px 0;
+            transform: scale(1);
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) {
+    section.bikes {
+        height: 220vh;
+
+        div.slogan {
+            flex-basis: 60vh;
+        }
+
+        div.bicycles {
+            flex-basis: 140vh;
+        }
+    }
+}
+
+@media (min-width: 320px) and (orientation: landscape) {
+    section.bikes {
+        height: 360vh;
+
+        div.slogan {
+            flex-basis: 120vh;
+        }
+
+        div.bicycles {
+            flex-basis: 240vh;
+
+            p {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 500px) and (orientation: landscape) {
+    section.bikes {
+        height: 340vh;
+
+        div.slogan {
+            flex-basis: 100vh;
+        }
+
+        div.bicycles {
+            flex-basis: 240vh;
+
+            p {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 540px) and (orientation: landscape) {
+    section.bikes {
+        height: 340vh;
+
+        div.slogan {
+            flex-basis: 80vh;
+        }
+
+        div.bicycles {
+            flex-basis: 260vh;
+        }
+    }
+}
+
+@media (min-width: 340px) and (min-height: 650px) {
+    section.bikes {
+        height: 160vh;
+
+        div.bicycles {
+            flex-basis: 120vh;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    section.bikes {
+        height: 310vh;
+
+        div.slogan {
+            flex-basis: 60vh;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+                margin: 0 40px;
+            }
+        }
+
+        div.bicycles {
+            flex-basis: 250vh;
+
+            p.orange {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 740px) {
+    section.bikes {
+        height: 200vh;
+
+        div.slogan {
+            flex-basis: 60vh;
+        }
+
+        div.bicycles {
+            flex-basis: 140vh;
+
+            .bicycle {
+                max-height: 45vh;
+                max-width: 30vw;
+            }
+        }
+    }
+}

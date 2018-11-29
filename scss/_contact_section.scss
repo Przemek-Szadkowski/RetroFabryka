@@ -1,0 +1,162 @@
+//sekcja kontaktu
+
+.contact {
+    height: 140vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    div.top {
+
+        h1 {
+            color: #f26202;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 30px 20px 10px;
+        }
+
+        h2 {
+            padding: 10px;
+            color: white;
+            font-size: 1.4rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    div.main_contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p.orange {
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 1rem;
+            padding: 10px;
+            text-align: center;
+            letter-spacing: 1px;
+
+            &:last-child {
+                margin-bottom: 20px;
+            }
+
+            i {
+                padding: 0 20px 0 0;
+                font-size: 1.3rem;
+                color: #f26202;
+            }
+        }
+
+        p.orange {
+            text-transform: uppercase;
+        }
+
+        iframe {
+            margin: 20px 0;
+        }
+    }
+
+    div.footer h2 {
+        height: 50px;
+        padding: 10px;
+        font-size: 1.2rem;
+        background-color: #222;
+        letter-spacing: 3px;
+        text-align: center;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+}
+
+@media (orientation: landscape) {
+    .contact {
+        height: 230vh;
+
+        div.top {
+            h2 {
+                letter-spacing: 3px;
+            }
+        }
+
+        div.main_contact {
+            p.orange {
+                text-transform: uppercase;
+            }
+        }
+
+        iframe {
+            width: 400px;
+            height: 200px;
+        }
+    }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+    .contact {
+        height: 210vh;
+    }
+}
+
+@media (min-width: 340px) and (min-height: 500px) {
+    .contact {
+        height: 120vh;
+    }
+}
+
+@media (min-width: 340px) and (min-height: 650px) {
+    .contact {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 700px) {
+    .contact {
+        height: 170vh;
+    }
+}
+
+@media (min-width: 740px) {
+    .contact {
+        height: 170vh;
+
+        div.top {
+
+            h1 {
+                font-size: 4rem;
+                margin-top: 20px;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+        }
+
+        div.main_contact {
+
+            p.orange {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+
+            iframe {
+                margin: 20px 0;
+                height: 350px;
+                width: 600px;
+            }
+        }
+
+        div.footer h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+    }
+}
